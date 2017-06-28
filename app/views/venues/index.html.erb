@@ -20,8 +20,20 @@
       <tr>
         <td><%= venue.name %></td>
         <td><%= venue.address %></td>
-        <td><%= venue.neighborhood.created_at %></td>
-        <td><%= venue.cuisine.name %></td>
+        <td>
+          <% if venue.neighborhood.present? %>
+            <a href="/neighborhoods/<%= venue.neighborhood.id %>">
+              <%= venue.neighborhood.created_at %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if venue.cuisine.present? %>
+            <a href="/cuisines/<%= venue.cuisine.id %>">
+              <%= venue.cuisine.name %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/venues/<%= venue.id %>" class="btn btn-primary">Show</a>
           <a href="/venues/<%= venue.id %>/edit" class="btn btn-warning">Edit</a>

@@ -9,10 +9,22 @@
       <dd><%= @menu_item.name %></dd>
 
       <dt>Dish</dt>
-      <dd><%= @menu_item.dish_id %></dd>
+      <dd>
+        <% if @menu_item.dish.present? %>
+          <a href="/dishes/<%= @menu_item.dish_id %>">
+            <%= @menu_item.dish.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Venue</dt>
-      <dd><%= @menu_item.venue_id %></dd>
+      <dd>
+        <% if @menu_item.venue.present? %>
+          <a href="/venues/<%= @menu_item.venue_id %>">
+            <%= @menu_item.venue.name %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
