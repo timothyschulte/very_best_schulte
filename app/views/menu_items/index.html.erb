@@ -19,7 +19,7 @@
       <tr>
         <td><%= menu_item.name %></td>
         <td><%= menu_item.dish.created_at %></td>
-        <td><%= menu_item.venue_id %></td>
+        <td><%= menu_item.venue.name %></td>
         <td>
           <a href="/menu_items/<%= menu_item.id %>" class="btn btn-primary">Show</a>
           <a href="/menu_items/<%= menu_item.id %>/edit" class="btn btn-warning">Edit</a>
