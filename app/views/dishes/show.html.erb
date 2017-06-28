@@ -26,3 +26,65 @@
     </div>
   </div>
 </div>
+
+<!-- A Dish has many menu_items -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Menu Items
+      </li>
+
+      <% @dish.menu_items.each do |menu_item| %>
+        <li class="list-group-item">
+          <a href="/menu_items/<%= menu_item.id %>">
+            <%= menu_item.name %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/menu_items/<%= menu_item.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/menu_items/<%= menu_item.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_menu_item/<%= menu_item.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Dish has many venues -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Venues
+      </li>
+
+      <% @dish.venues.each do |venue| %>
+        <li class="list-group-item">
+          <a href="/venues/<%= venue.id %>">
+            <%= venue.name %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/venues/<%= venue.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/venues/<%= venue.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_venue/<%= venue.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
