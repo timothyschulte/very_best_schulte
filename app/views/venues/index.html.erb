@@ -20,7 +20,7 @@
       <tr>
         <td><%= venue.name %></td>
         <td><%= venue.address %></td>
-        <td><%= venue.neighborhood_id %></td>
+        <td><%= venue.neighborhood.created_at %></td>
         <td><%= venue.cuisine_id %></td>
         <td>
           <a href="/venues/<%= venue.id %>" class="btn btn-primary">Show</a>
