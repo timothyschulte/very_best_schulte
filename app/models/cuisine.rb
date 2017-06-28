@@ -9,6 +9,10 @@ class Cuisine < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :neighborhoods,
+             :through => :venues,
+             :source => :neighborhood
+
   # Validations
 
 end
