@@ -1,6 +1,8 @@
 class Venue < ApplicationRecord
   # Direct associations
 
+  belongs_to :cuisine
+
   belongs_to :neighborhood,
              :required => false
 
